@@ -1,0 +1,62 @@
+{
+  "Factory": {
+    "centerMaxX": 76.6,
+    "centerMinX": -67,
+    "centerMaxY": 69,
+    "centerMinY": -65.5,
+    "pointMaxX": 76.6,
+    "pointMinX": -67,
+    "pointMaxY": 69,
+    "pointMinY": -65.5
+  },
+  "The Lab": {
+    "centerMinX": -287,
+    "centerMaxX": -91,
+    "centerMinY": -477,
+    "centerMaxY": -193,
+    "pointMinX": -287,
+    "pointMaxX": -91,
+    "pointMinY": -477,
+    "pointMaxY": -193
+  },
+  "Lab": {
+    "centerMinX": -287,
+    "centerMaxX": -91,
+    "centerMinY": -477,
+    "centerMaxY": -193,
+    "pointMinX": -287,
+    "pointMaxX": -91,
+    "pointMinY": -477,
+    "pointMaxY": -193
+  },
+  "Labs": {
+    "centerMinX": -287,
+    "centerMaxX": -91,
+    "centerMinY": -477,
+    "centerMaxY": -193,
+    "pointMinX": -287,
+    "pointMaxX": -91,
+    "pointMinY": -477,
+    "pointMaxY": -193
+  },
+  "Streets of Tarkov": {
+    "centerMinX": -279,
+    "centerMaxX": 324,
+    "centerMinY": -215,
+    "centerMaxY": 548,
+    "pointMinX": -279,
+    "pointMaxX": 324,
+    "pointMinY": -215,
+    "pointMaxY": 548
+  },
+  "StreetsOfTarkov": {
+    "centerMinX": -279,
+    "centerMaxX": 324,
+    "centerMinY": -215,
+    "centerMaxY": 548,
+    "pointMinX": -279,
+    "pointMaxX": 324,
+    "pointMinY": -215,
+    "pointMaxY": 548
+  }
+}

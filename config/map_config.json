@@ -1,0 +1,72 @@
+{
+    "Default": {
+    "centerMinX": -303,
+    "centerMaxX": 289,
+    "centerMinY": -338,
+    "centerMaxY": 336,
+    "pointMinX": -303,
+    "pointMaxX": 289,
+    "pointMinY": -273,
+    "pointMaxY": 272
+  },
+  "Customs": {
+    "centerMaxX": 698,
+    "centerMaxY": 237,
+    "centerMinX": -371,
+    "centerMinY": -307,
+    "pointMaxX": 698,
+    "pointMaxY": 237,
+    "pointMinX": -371,
+    "pointMinY": -307
+  },
+  "Interchange": {
+    "centerMaxX": 530,
+    "centerMinX": -364,
+    "centerMaxY": 452,
+    "centerMinY": -439,
+    "pointMaxX": 530,
+    "pointMinX": -364,
+    "pointMaxY": 452,
+    "pointMinY": -439
+  },
+  "Lighthouse": {
+    "centerMinX": -545,
+    "centerMaxX": 515,
+    "centerMinY": -1000,
+    "centerMaxY": 725,
+    "pointMinX": -545,
+    "pointMaxX": 515,
+    "pointMinY": -1000,
+    "pointMaxY": 725
+  },
+  "Reserve": {
+    "centerMinX": -303,
+    "centerMaxX": 289,
+    "centerMinY": -338,
+    "centerMaxY": 336,
+    "pointMinX": -303,
+    "pointMaxX": 289,
+    "pointMinY": -273,
+    "pointMaxY": 272
+  },
+  "Shoreline": {
+    "centerMaxX": 506,
+    "centerMinX": -1060,
+    "centerMaxY": 618,
+    "centerMinY": -405,
+    "pointMaxX": 506,
+    "pointMinX": -1060,
+    "pointMaxY": 618,
+    "pointMinY": -405
+  },
+  "Woods": {
+    "centerMaxX": 650,
+    "centerMaxY": 470,
+    "centerMinX": -695,
+    "centerMinY": -945,
+    "pointMaxX": 650,
+    "pointMaxY": 470,
+    "pointMinX": -695,
+    "pointMinY": -945
+  }
+}

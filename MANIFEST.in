@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+recursive-include tarkov_app/src/tarkov_app/icons *.png
+recursive-include tarkov_app/src/tarkov_app/maps *.svg
