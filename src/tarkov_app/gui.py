@@ -10,7 +10,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import customtkinter as ctk
 from PIL import Image
-from tkSvg import SvgImage
+from tksvg import SvgImage  # Changed from tkSvg to tksvg (lowercase 's')
 
 from .screenshot_handler import ScreenshotHandler, Coordinates
 from .data_manager import MapDataManager
@@ -455,7 +455,7 @@ class TarkovMapApp:
                 
                 pulse_effect()
                 
-                # Add zoom and pan functionality
+                # Add pan functionality (no zoom)
                 self._add_canvas_controls(canvas)
                 
                 # Store reference to prevent garbage collection
@@ -471,7 +471,7 @@ class TarkovMapApp:
     
     def _add_canvas_controls(self, canvas):
         """
-        Add pan and zoom controls to a canvas.
+        Add pan controls to a canvas.
         
         Args:
             canvas: The canvas to add controls to
@@ -479,10 +479,6 @@ class TarkovMapApp:
         # Initialize variables for tracking mouse movement
         prev_x = None
         prev_y = None
-        scale = 1.0
-        
-        # Assign scale factor to canvas
-        canvas.scale_factor = 1.0
         
         # Pan start handler
         def move_start(event):
@@ -508,66 +504,10 @@ class TarkovMapApp:
             prev_y = None
             canvas.config(cursor="")
         
-        # Zoom handler
-        def zoom(event):
-            nonlocal scale
-            # Determine zoom direction
-            if hasattr(event, 'delta'):
-                # Windows
-                if event.delta > 0:
-                    factor = 1.1
-                elif event.delta < 0:
-                    factor = 0.9
-                else:
-                    return
-            else:
-                # Linux
-                if event.num == 4:
-                    factor = 1.1
-                elif event.num == 5:
-                    factor = 0.9
-                else:
-                    return
-            
-            # Apply zoom limits
-            scale *= factor
-            if scale < 0.5:
-                scale = 0.5
-                return
-            if scale > 5.0:
-                scale = 5.0
-                return
-            
-            # Scale canvas around mouse point
-            canvas.scale("all", event.x, event.y, factor, factor)
-            canvas.scale_factor = scale
-        
-        # Reset view handler
-        def reset_view(event=None):
-            nonlocal scale
-            # Reset the view
-            canvas.delete("all")
-            canvas.create_image(0, 0, anchor='nw', image=canvas.svg_image)
-            scale = 1.0
-            canvas.scale_factor = 1.0
-            
-            # Redraw player marker
-            for tag in canvas.gettags("player_position"):
-                canvas.addtag_withtag("player_position", tag)
-            
-        # Bind controls
+        # Bind pan controls
         canvas.bind("<ButtonPress-1>", move_start)
         canvas.bind("<B1-Motion>", move_move)
         canvas.bind("<ButtonRelease-1>", move_end)
-        
-        # Bind scroll events for different platforms
-        canvas.bind("<MouseWheel>", zoom)  # Windows
-        canvas.bind("<Button-4>", zoom)    # Linux scroll up
-        canvas.bind("<Button-5>", zoom)    # Linux scroll down
-        
-        # Bind reset view
-        canvas.bind("<r>", reset_view)
-        canvas.bind("<R>", reset_view)
     
     def _open_settings(self):
         """Open the settings dialog."""

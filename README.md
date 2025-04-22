@@ -7,7 +7,7 @@ A tool for translating Escape from Tarkov game coordinates to positions on map i
 - Load screenshots with embedded coordinates from Escape from Tarkov
 - Display player positions on interactive SVG maps with animated indicators
 - Support for all official Tarkov maps (Customs, Factory, Woods, Shoreline, Interchange, Reserve, Labs, Lighthouse, Streets of Tarkov)
-- Pan and zoom functionality with smooth animations and reset view option
+- Pan functionality with smooth movement
 - Coordinate history tracking with timestamp logging
 - Dark and light theme support
 - Modern UI with customtkinter
@@ -21,7 +21,7 @@ A tool for translating Escape from Tarkov game coordinates to positions on map i
   - tkinter (usually comes with Python)
   - customtkinter
   - Pillow (PIL)
-  - tkSvg
+  - tksvg
 
 ### Setup
 
@@ -47,7 +47,7 @@ A tool for translating Escape from Tarkov game coordinates to positions on map i
 
 ```
 # Using the quick run script
-./run.py
+python run.py
 
 # As a Python module
 python -m tarkov_app
@@ -69,9 +69,7 @@ tarkov-assistant
    - Map information (raid duration, enemies) is shown when available
 
 3. **Navigate Maps**:
-   - **Zoom**: Use mouse wheel to zoom in/out
    - **Pan**: Click and drag to move around the map
-   - **Reset View**: Press 'R' key to reset to the original view
 
 4. **View Coordinate History**:
    - Go to View → Coordinate History
@@ -118,6 +116,10 @@ tarkov_app/
 ├── data/                      # Game data files
 │   ├── maps.json              # Map information data
 │   └── coordinates/           # Coordinate storage
+├── docs/                      # Documentation
+│   ├── project_history.md     # Project development history
+│   └── documentation/         # Project documentation files
+│   └── screenshots/           # Example screenshots
 ├── src/                       # Source code
 │   └── tarkov_app/            # Main package
 │       ├── __init__.py        # Package initialization
@@ -125,14 +127,11 @@ tarkov_app/
 │       ├── main.py            # Application initialization
 │       ├── gui.py             # GUI components
 │       ├── screenshot_handler.py  # Screenshot handling
+│       ├── config_manager.py  # Configuration management
 │       ├── data_manager/      # Data management modules
-│       │   ├── __init__.py    # Package initialization
-│       │   ├── maps_data.py   # Maps data handler
-│       │   └── tarkov_data.py # Tarkov game data handler
 │       ├── icons/             # Map icons
 │       └── maps/              # SVG maps
 ├── tests/                     # Test files
-├── docs/                      # Documentation
 ├── run.py                     # Quick launch script
 ├── README.md                  # This file
 ├── requirements.txt           # Dependencies
@@ -144,7 +143,7 @@ tarkov_app/
 
 ### Enhanced Map Viewing
 
-- **Interactive Maps**: Smooth pan and zoom controls
+- **Interactive Maps**: Smooth panning controls
 - **Animated Player Marker**: Visual pulsing effect to easily spot your position
 - **Map Information**: Details about raid duration and enemies when available
 - **Multiple Map Formats**: Support for all official Tarkov map formats
@@ -169,6 +168,7 @@ tarkov_app/
 - **Screenshot Format**: Ensure screenshots follow the expected naming format
 - **Map Files**: Verify that SVG map files are present in the maps directory
 - **Coordinate Extraction**: Check the coordinate extraction from screenshot filenames
+- **Case Sensitivity**: Note that the `tksvg` package is imported with lowercase 's' (`tksvg`, not `tkSvg`)
 
 ## License
 
@@ -177,3 +177,7 @@ MIT License
 ## Credits
 
 Map SVGs based on files from the Escape from Tarkov community and tarkovdata project.
+
+## Current Version
+
+Version 1.0.0 (April 2025)
